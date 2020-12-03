@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import "./../styles/App.css";
+import State from "./States";
 
 // Do not alter the states const and values inside it.
 const states = [
@@ -155,45 +156,11 @@ const states = [
 ];
 
 function App() {
-  const [open, setOpen] = useState(false);
-  // let show = {};
-  // const showCities = (state) => {
-  //   return (
-  //     <>
-  //       {" "}
-  //       {state.cities.map((cities, index) => (
-  //         <li key={index} id={`cities${index + 1}`}>
-  //           {cities.name}
-  //         </li>
-  //       ))}
-  //     </>
-  //   );
-  // };
-  const handleClick = (state) => {
-    setOpen(true);
-  };
-
   return (
-    <div id="main">
-      {states.map((state, index) => (
-        <li
-          key={index}
-          onClick={() => {
-            handleClick(state);
-          }}
-          id={`state${index + 1}`}
-        >
-          {state.name}
-          {open
-            ? state.cities.map((cities, index) => (
-                <li key={index} id={`cities${index + 1}`}>
-                  {cities.name}
-                </li>
-              ))
-            : null}
-        </li>
-      ))}
-    </div>
+    <>
+      <div id="main"></div>
+      <State states={states} />
+    </>
   );
 }
 
